@@ -10,33 +10,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-image: url("Conceptual\ illustration\ created\ for\ self\ promotion\ and\ is\ uncommissioned_\ 2.jpg");
-       background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed
-    }
+      background-color: aqua;
     .box{
      display: flex;
-    }
-    .logo{
-      width:160px;
-      height: 100px;
-      
-      }
-
-    .login-container {
-      background: transparent ;
-      padding: 30px;
-      width: 350px;
-      border-radius: 12px;
-      display:center;
-      margin:30px;
-      margin-left:100px;
-      
-    }
-    .login-container h1 { text-align: center;}
-
-
+    }}
+    
 
     label {
       display: block;
@@ -75,4 +53,4 @@
       background: #0056b3;
     }
   
-    
+  
