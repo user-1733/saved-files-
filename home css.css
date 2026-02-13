@@ -24,10 +24,7 @@ a{
     body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
-  background-image: url("shutterstock_1833016393_crop.jpg");
-       background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+ background-color: aqua;
     
 }
 
