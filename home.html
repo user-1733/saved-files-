@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="home css.css">
+  <title>Election Board</title>
+
+  <style>
+    /* Simple modal styling (can move to CSS file) */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+    }
+
+    .modal button {
+      margin: 10px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Election Board</h1>
+</header>
+
+<h1>Every vote matters</h1>
+
+<main class="candidates">
+
+  <div class="card">
+    <img src="download.png">
+    <h2>Candidate A</h2>
+    <p>Focused on education and youth development.</p>
+    <a href="more info.html" class="button">More Details</a>
+    <button class="vote" onclick="openModal('a')">Vote</button>
+    <div class="vote-count" id="a-votes">Votes: 0</div>
+  </div>
+
+  <div class="card">
+    <img src="download.png">
+    <h2>Candidate B</h2>
+    <p>Advocates for economic growth and jobs.</p>
+    <a href="more info.html" class="button">More Details</a>
+    <button class="vote" onclick="openModal('b')">Vote</button>
+    <div class="vote-count" id="b-votes">Votes: 0</div>
+  </div>
+
+  <div class="card">
+    <img src="download.png">
+    <h2>Candidate C</h2>
+    <p>Committed to healthcare and sustainability.</p>
+    <a href="more info.html" class="button">More Details</a>
+    <button class="vote" onclick="openModal('c')">Vote</button>
+    <div class="vote-count" id="c-votes">Votes: 0</div>
+  </div>
+
+</main>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2>Confirm Vote</h2>
+    <p>Are you sure you want to vote for this candidate?</p>
+    <button onclick="confirmVote()">Yes</button>
+    <button onclick="closeModal()">No</button>
+  </div>
+</div>
+
+<script>
+  const votes = { a: 0, b: 0, c: 0 };
+  let selectedCandidate = null;
+
+  function openModal(candidate) {
+    selectedCandidate = candidate;
+    document.getElementById("modal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+    selectedCandidate = null;
+  }
+
+  function confirmVote() {
+    votes[selectedCandidate]++;
+    document.getElementById(selectedCandidate + "-votes").innerText =
+      "Votes: " + votes[selectedCandidate];
+
+    alert("Thank you for voting!");
+
+    // Redirect back to login page
+    window.location.href = "login page.html";
+  }
+  
+</script>
+
+</body>
+</html>
